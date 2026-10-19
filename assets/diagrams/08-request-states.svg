@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1380" viewBox="0 0 1900 1380" role="img" aria-labelledby="title desc"><title id="title">TO-BE · состояния запроса</title><desc id="desc">Активные состояния и три финальных исхода. Ожидающая отмена является признаком.</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L8 4.5 L0 9" fill="none" stroke="#42536c" stroke-width="1.5"/></marker></defs><rect width="100%" height="100%" fill="white"/>
+<text x="35" y="40.0" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="27" font-weight="650" fill="#1d2c42"><tspan x="35" dy="0">TO-BE · состояния запроса</tspan></text>
+<text x="35" y="78.0" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#607087"><tspan x="35" dy="0">Один запрос — один вариант и одна единица. Три финальных исхода не переписываются.</tspan></text>
+<rect x="35" y="130" width="1830" height="480" rx="15" fill="#f7f9fc" stroke="#b5c6db"/>
+<text x="60" y="165.0" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" fill="#1d2c42"><tspan x="60" dy="0">Активный запрос</tspan></text>
+<polyline data-flow="StateFlow_0" points="121.0,340.0 250.0,340.0" fill="none" stroke="#42536c" stroke-width="1.8" marker-end="url(#arrow)"/>
+<polyline data-flow="StateFlow_1" points="480.0,340.0 800.0,340.0" fill="none" stroke="#42536c" stroke-width="1.8" marker-end="url(#arrow)"/>
+<polyline data-flow="StateFlow_2" points="1030.0,340.0 1400.0,340.0" fill="none" stroke="#42536c" stroke-width="1.8" marker-end="url(#arrow)"/>
+<polyline data-flow="StateFlow_3" points="1400.0,322.0 1030.0,322.0" fill="none" stroke="#42536c" stroke-width="1.8" marker-end="url(#arrow)"/>
+<polyline data-flow="StateFlow_4" points="903.0,295.0 903.0,267.0 927.0,267.0 927.0,295.0" fill="none" stroke="#42536c" stroke-width="1.8" marker-end="url(#arrow)"/>
+<polyline data-flow="StateFlow_5" points="1518.0,295.0 1518.0,267.0 1542.0,267.0 1542.0,295.0" fill="none" stroke="#42536c" stroke-width="1.8" marker-end="url(#arrow)"/>
+<polyline data-flow="StateFlow_6" points="365.0,385.0 365,1040.0 850.0,1040.0" fill="none" stroke="#42536c" stroke-width="1.8" marker-end="url(#arrow)"/>
+<polyline data-flow="StateFlow_7" points="915.0,385.0 915.0,700.0 670.0,700.0" fill="none" stroke="#42536c" stroke-width="1.8" marker-end="url(#arrow)"/>
+<polyline data-flow="StateFlow_8" points="933.0,385.0 933.0,967.0 983.0,967.0 983.0,995.0" fill="none" stroke="#42536c" stroke-width="1.8" marker-end="url(#arrow)"/>
+<polyline data-flow="StateFlow_9" points="1660,358 1790,358 1790,1058 1080,1058" fill="none" stroke="#42536c" stroke-width="1.8" marker-end="url(#arrow)"/>
+<polyline data-flow="StateFlow_10" points="1530.0,385.0 1530.0,627.0 1435.0,627.0 1435.0,655.0" fill="none" stroke="#42536c" stroke-width="1.8" marker-end="url(#arrow)"/>
+<polyline data-flow="StateFlow_11" points="1030,358 1180,358 1180,682 1320,682" fill="none" stroke="#42536c" stroke-width="1.8" marker-end="url(#arrow)"/>
+<polyline data-flow="StateFlow_12" points="555.0,745.0 555.0,785.0" fill="none" stroke="#42536c" stroke-width="1.8" marker-end="url(#arrow)"/>
+<polyline data-flow="StateFlow_13" points="965.0,1085.0 965.0,1135.0" fill="none" stroke="#42536c" stroke-width="1.8" marker-end="url(#arrow)"/>
+<polyline data-flow="StateFlow_14" points="1435.0,745.0 1435.0,785.0" fill="none" stroke="#42536c" stroke-width="1.8" marker-end="url(#arrow)"/>
+<text x="185.5" y="323.0" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#1d2c42"><tspan x="185.5" dy="0">Запрос принят</tspan></text>
+<text x="640.0" y="323.0" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#1d2c42"><tspan x="640.0" dy="0">Склад принял</tspan></text>
+<text x="1270.5" y="357.0" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#1d2c42"><tspan x="1270.5" dy="0">Вариант подобран¹</tspan></text>
+<text x="1215.0" y="305.0" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#1d2c42"><tspan x="1215.0" dy="0">Ошибка готовности¹</tspan></text>
+<text x="915.0" y="231.9" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#1d2c42"><tspan x="915.0" dy="0">Запрос отмены /</tspan><tspan x="915.0" dy="18.2">флаг = true</tspan></text>
+<text x="1530.0" y="231.9" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#1d2c42"><tspan x="1530.0" dy="0">Запрос отмены /</tspan><tspan x="1530.0" dy="18.2">флаг = true</tspan></text>
+<text x="278.0" y="703.4" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#1d2c42"><tspan x="278.0" dy="0">Отмена продавцом;</tspan><tspan x="278.0" dy="18.2">причина обязательна</tspan></text>
+<text x="855.0" y="533.4" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#1d2c42"><tspan x="855.0" dy="0">Поиск без</tspan><tspan x="855.0" dy="18.2">результата¹</tspan></text>
+<text x="1001.0" y="666.9" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#1d2c42"><tspan x="1001.0" dy="0">Подтверждение</tspan><tspan x="1001.0" dy="18.2">отмены²</tspan></text>
+<text x="1725.0" y="322.9" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#1d2c42"><tspan x="1725.0" dy="0">Подтверждение</tspan><tspan x="1725.0" dy="18.2">отмены²</tspan></text>
+<text x="1466.0" y="487.8" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#1d2c42"><tspan x="1466.0" dy="0">Фактическая</tspan><tspan x="1466.0" dy="18.2">передача</tspan><tspan x="1466.0" dy="18.2">подтверждена</tspan></text>
+<text x="1105.0" y="374.9" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#1d2c42"><tspan x="1105.0" dy="0">Передача при</tspan><tspan x="1105.0" dy="18.2">спорной отмене³</tspan></text>
+<rect data-state="Created" x="250" y="295.0" width="230" height="90" rx="13" fill="#edf4ff" stroke="#7d9cc9" stroke-width="1.8"/>
+<text x="365.0" y="345.0" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="600" fill="#1d2c42"><tspan x="365.0" dy="0">Создан</tspan></text>
+<rect data-state="Working" x="800" y="295.0" width="230" height="90" rx="13" fill="#edf4ff" stroke="#7d9cc9" stroke-width="1.8"/>
+<text x="915.0" y="345.0" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="600" fill="#1d2c42"><tspan x="915.0" dy="0">В работе</tspan></text>
+<rect data-state="Ready" x="1400" y="295.0" width="260" height="90" rx="13" fill="#edf4ff" stroke="#7d9cc9" stroke-width="1.8"/>
+<text x="1530.0" y="345.0" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="600" fill="#1d2c42"><tspan x="1530.0" dy="0">Готов к передаче</tspan></text>
+<rect data-state="NotFound" x="440" y="655.0" width="230" height="90" rx="13" fill="#edf4ff" stroke="#7d9cc9" stroke-width="1.8"/>
+<text x="555.0" y="705.0" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="600" fill="#1d2c42"><tspan x="555.0" dy="0">Не найдено</tspan></text>
+<circle cx="555.0" cy="800.0" r="15" fill="white" stroke="#34527c" stroke-width="2"/><circle cx="555.0" cy="800.0" r="9" fill="#34527c"/>
+<rect data-state="Cancelled" x="850" y="995.0" width="230" height="90" rx="13" fill="#edf4ff" stroke="#7d9cc9" stroke-width="1.8"/>
+<text x="965.0" y="1045.0" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="600" fill="#1d2c42"><tspan x="965.0" dy="0">Отменён</tspan></text>
+<circle cx="965.0" cy="1150.0" r="15" fill="white" stroke="#34527c" stroke-width="2"/><circle cx="965.0" cy="1150.0" r="9" fill="#34527c"/>
+<rect data-state="Passed" x="1320" y="655.0" width="230" height="90" rx="13" fill="#edf4ff" stroke="#7d9cc9" stroke-width="1.8"/>
+<text x="1435.0" y="705.0" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="600" fill="#1d2c42"><tspan x="1435.0" dy="0">Передан</tspan></text>
+<circle cx="1435.0" cy="800.0" r="15" fill="white" stroke="#34527c" stroke-width="2"/><circle cx="1435.0" cy="800.0" r="9" fill="#34527c"/>
+<circle cx="110.0" cy="340.0" r="11" fill="#34527c"/>
+<text x="35" y="1230.0" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#607087"><tspan x="35" dy="0">¹ Нет ожидающей отмены. При отмене ненужный поиск не продолжается; сначала разрешается положение вещи.</tspan></text>
+<text x="35" y="1259.0" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#607087"><tspan x="35" dy="0">² Положение вещи урегулировано, итог сохраняет текущий складской исполнитель. При фактической передаче — «Передан».</tspan></text>
+<text x="35" y="1288.0" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#607087"><tspan x="35" dy="0">³ Из «В работе» в «Передан» — только при ожидающей отмене и подтверждённом факте передачи по FR-10; готовность не предполагается.</tspan></text>
+<text x="35" y="1317.0" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#607087"><tspan x="35" dy="0">Отмена — признак активного запроса. С 5 минут — визуальная пометка. Передачи работы не меняют статус и время создания.</tspan></text>
+<text x="35" y="1346.0" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#607087"><tspan x="35" dy="0">Потеря ответа не создаёт нового статуса: сначала уточняется сохранённый результат. Комментарий к «Не найдено» необязателен.</tspan></text>
+</svg>

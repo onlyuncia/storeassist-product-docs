@@ -1,0 +1,8 @@
+{
+  "name": "storeassist-main-flow",
+  "private": true,
+  "scripts": {
+    "test": "node --test --test-isolation=none tests/engine.test.cjs tests/interface.test.cjs",
+    "preview": "python -m http.server 8818 --bind 127.0.0.1 --directory .."
+  }
+}

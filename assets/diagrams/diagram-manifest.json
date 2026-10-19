@@ -1,0 +1,253 @@
+[
+  {
+    "file": "01-bpmn-as-is",
+    "title": "AS-IS · запрос товара со склада",
+    "nodes": 11,
+    "flows": 11,
+    "requirements": [],
+    "taskTypes": {
+      "Choose": "manualTask",
+      "Stock": "userTask",
+      "Send": "userTask",
+      "Search": "manualTask",
+      "Deliver": "manualTask",
+      "Confirm": "userTask",
+      "Tell": "manualTask",
+      "Continue": "manualTask"
+    }
+  },
+  {
+    "file": "02-bpmn-to-be",
+    "title": "TO-BE · от запроса до выдачи",
+    "nodes": 21,
+    "flows": 20,
+    "requirements": [
+      "FR-02",
+      "FR-04",
+      "FR-06",
+      "FR-07",
+      "FR-08",
+      "FR-13",
+      "FR-25",
+      "FR-26",
+      "FR-31",
+      "FR-32"
+    ],
+    "taskTypes": {
+      "Prepare": "userTask",
+      "Number": "serviceTask",
+      "Accept": "userTask",
+      "Search": "manualTask",
+      "RecordPlaces": "userTask",
+      "Ready": "userTask",
+      "Deliver": "manualTask",
+      "Confirm": "userTask",
+      "NotFound": "userTask",
+      "Notify": "serviceTask",
+      "Alternatives": "userTask",
+      "AgreeWithBuyer": "manualTask",
+      "New": "userTask"
+    }
+  },
+  {
+    "file": "03-bpmn-create-request",
+    "title": "TO-BE · проверка наличия и создание запроса",
+    "nodes": 12,
+    "flows": 12,
+    "requirements": [
+      "FR-01",
+      "FR-02",
+      "FR-11",
+      "FR-16",
+      "FR-18",
+      "FR-26",
+      "FR-31",
+      "FR-32"
+    ],
+    "taskTypes": {
+      "Choose": "userTask",
+      "Read": "serviceTask",
+      "Warning": "serviceTask",
+      "Confirm": "userTask",
+      "Create": "serviceTask"
+    }
+  },
+  {
+    "file": "04-bpmn-cancellation",
+    "title": "TO-BE · отмена и фактическая передача",
+    "nodes": 17,
+    "flows": 18,
+    "requirements": [
+      "FR-07",
+      "FR-09",
+      "FR-10",
+      "FR-12",
+      "FR-16",
+      "RULE-08",
+      "RULE-09",
+      "RULE-27"
+    ],
+    "taskTypes": {
+      "Cancel": "userTask",
+      "Immediate": "serviceTask",
+      "Final": "serviceTask",
+      "Flag": "serviceTask",
+      "Fact": "manualTask",
+      "Help": "manualTask",
+      "Passed": "userTask",
+      "Stopped": "userTask",
+      "Wait": "manualTask"
+    }
+  },
+  {
+    "file": "05-bpmn-discrepancy",
+    "title": "TO-BE · проверка наличия и размещения",
+    "nodes": 13,
+    "flows": 13,
+    "requirements": [
+      "FR-21",
+      "FR-22",
+      "FR-23",
+      "FR-24",
+      "FR-34",
+      "RULE-14",
+      "RULE-15",
+      "RULE-24",
+      "RULE-28"
+    ],
+    "taskTypes": {
+      "Report": "userTask",
+      "Append": "serviceTask",
+      "New": "serviceTask",
+      "Accept": "userTask",
+      "Review": "manualTask",
+      "Accounting": "userTask",
+      "Close": "userTask",
+      "Refresh": "serviceTask"
+    }
+  },
+  {
+    "file": "06-bpmn-search-handover",
+    "title": "TO-BE · передача поиска на складе",
+    "nodes": 14,
+    "flows": 14,
+    "requirements": [
+      "FR-19",
+      "FR-20",
+      "FR-12",
+      "FR-16",
+      "RULE-12",
+      "RULE-13"
+    ],
+    "taskTypes": {
+      "Choose": "userTask",
+      "Check": "serviceTask",
+      "Offer": "serviceTask",
+      "Reply": "userTask",
+      "Keep": "serviceTask",
+      "Recheck": "serviceTask",
+      "Switch": "serviceTask"
+    }
+  },
+  {
+    "file": "07-bpmn-service-handover",
+    "title": "TO-BE · передача обслуживания продавцу",
+    "nodes": 19,
+    "flows": 21,
+    "requirements": [
+      "FR-28",
+      "FR-29",
+      "FR-30",
+      "FR-33",
+      "FR-16",
+      "RULE-17",
+      "RULE-18",
+      "RULE-19",
+      "RULE-25"
+    ],
+    "taskTypes": {
+      "Choose": "userTask",
+      "Check": "serviceTask",
+      "Offer": "serviceTask",
+      "WithdrawAction": "userTask",
+      "SaveWithdraw": "serviceTask",
+      "Recheck": "serviceTask",
+      "Switch": "serviceTask",
+      "Actual": "serviceTask"
+    }
+  },
+  {
+    "file": "08-request-states",
+    "title": "TO-BE · состояния запроса",
+    "states": {
+      "Created": "Создан",
+      "Working": "В работе",
+      "Ready": "Готов к передаче",
+      "NotFound": "Не найдено",
+      "Cancelled": "Отменён",
+      "Passed": "Передан"
+    },
+    "transitions": [
+      [
+        "Initial",
+        "Created",
+        "Запрос принят системой"
+      ],
+      [
+        "Created",
+        "Working",
+        "Склад принял запрос"
+      ],
+      [
+        "Working",
+        "Ready",
+        "Нужный вариант подобран [нет ожидающей отмены]"
+      ],
+      [
+        "Ready",
+        "Working",
+        "Ошибка готовности / причина [нет ожидающей отмены]"
+      ],
+      [
+        "Working",
+        "Working",
+        "Продавец запросил отмену / флаг = true"
+      ],
+      [
+        "Ready",
+        "Ready",
+        "Продавец запросил отмену / флаг = true"
+      ],
+      [
+        "Created",
+        "Cancelled",
+        "Продавец отменил / обязательная причина"
+      ],
+      [
+        "Working",
+        "NotFound",
+        "Поиск завершён без результата [нет ожидающей отмены]"
+      ],
+      [
+        "Working",
+        "Cancelled",
+        "Исполнитель подтвердил отмену [положение вещи урегулировано]"
+      ],
+      [
+        "Ready",
+        "Cancelled",
+        "Исполнитель подтвердил отмену [положение вещи урегулировано]"
+      ],
+      [
+        "Ready",
+        "Passed",
+        "Склад подтвердил фактическую передачу на терминале"
+      ],
+      [
+        "Working",
+        "Passed",
+        "Спорная отмена [ожидает отмена; фактическая передача подтверждена складом]"
+      ]
+    ]
+  }
+]

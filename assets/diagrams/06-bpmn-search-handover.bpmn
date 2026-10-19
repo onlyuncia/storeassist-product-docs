@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_06_bpmn_search_handover" targetNamespace="https://storeassist.example/portfolio/bpmn" exporter="StoreAssist diagram builder">
+  <bpmn:process id="Process_06_bpmn_search_handover" name="TO-BE · передача поиска на складе" isExecutable="false">
+    <bpmn:documentation>Текущий исполнитель или руководитель вручную выбирает другого складского сотрудника своего магазина.
+Разрешено только «В работе», без ожидающей отмены; чужой магазин, неподходящая роль и выбор себя отклоняются.
+До сохранённого принятия отвечает прежний исполнитель. При отказе, отзыве или отсутствии ответа автоматического назначения нет.
+Повтор после потерянного ответа уточняет тот же результат; исходные времена и проверенные места сохраняются.
+Требования: FR-19, FR-20, FR-12, FR-16, RULE-12, RULE-13</bpmn:documentation>
+    <bpmn:laneSet id="Lanes">
+      <bpmn:lane id="Lane_0" name="Исполнитель / руководитель">
+        <bpmn:flowNodeRef>Need</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Choose</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_1" name="Выбранный коллега склада">
+        <bpmn:flowNodeRef>Reply</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Yes</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_2" name="StoreAssist">
+        <bpmn:flowNodeRef>Check</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Allowed</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>No</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Offer</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Keep</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>KeepEnd</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Recheck</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Valid</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Switch</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Done</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="Need" name="Нужна помощь в поиске">
+      <bpmn:outgoing>Flow_0</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:userTask id="Choose" name="Вручную выбрать другого коллегу склада своего магазина">
+      <bpmn:incoming>Flow_0</bpmn:incoming>
+      <bpmn:outgoing>Flow_1</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:serviceTask id="Check" name="Проверить инициатора, получателя, магазин, состояние и отмену">
+      <bpmn:incoming>Flow_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_2</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="Allowed" name="Передача допустима?">
+      <bpmn:incoming>Flow_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_3</bpmn:outgoing>
+      <bpmn:outgoing>Flow_4</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:endEvent id="No" name="Предложение не создано">
+      <bpmn:incoming>Flow_3</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:serviceTask id="Offer" name="Сохранить предложение; передать историю поиска">
+      <bpmn:incoming>Flow_4</bpmn:incoming>
+      <bpmn:outgoing>Flow_5</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:userTask id="Reply" name="Принять или отклонить предложение">
+      <bpmn:incoming>Flow_5</bpmn:incoming>
+      <bpmn:outgoing>Flow_6</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Yes" name="Коллега принимает?">
+      <bpmn:incoming>Flow_6</bpmn:incoming>
+      <bpmn:outgoing>Flow_7</bpmn:outgoing>
+      <bpmn:outgoing>Flow_9</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:serviceTask id="Keep" name="Показать актуальное назначение; записать отказ / отклонение">
+      <bpmn:incoming>Flow_7</bpmn:incoming>
+      <bpmn:incoming>Flow_12</bpmn:incoming>
+      <bpmn:outgoing>Flow_8</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="KeepEnd" name="Действие не применено">
+      <bpmn:incoming>Flow_8</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:serviceTask id="Recheck" name="При принятии повторно проверить состояние, отмену и назначение">
+      <bpmn:incoming>Flow_9</bpmn:incoming>
+      <bpmn:outgoing>Flow_10</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:exclusiveGateway id="Valid" name="Условия ещё выполняются?">
+      <bpmn:incoming>Flow_10</bpmn:incoming>
+      <bpmn:outgoing>Flow_11</bpmn:outgoing>
+      <bpmn:outgoing>Flow_12</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:serviceTask id="Switch" name="Сохранить одного нового исполнителя и историю">
+      <bpmn:incoming>Flow_11</bpmn:incoming>
+      <bpmn:outgoing>Flow_13</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:endEvent id="Done" name="Коллега продолжает поиск">
+      <bpmn:incoming>Flow_13</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0" sourceRef="Need" targetRef="Choose" />
+    <bpmn:sequenceFlow id="Flow_1" sourceRef="Choose" targetRef="Check" />
+    <bpmn:sequenceFlow id="Flow_2" sourceRef="Check" targetRef="Allowed" />
+    <bpmn:sequenceFlow id="Flow_3" sourceRef="Allowed" targetRef="No" name="Нет">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">Нет</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_4" sourceRef="Allowed" targetRef="Offer" name="Да">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">Да</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_5" sourceRef="Offer" targetRef="Reply" />
+    <bpmn:sequenceFlow id="Flow_6" sourceRef="Reply" targetRef="Yes" />
+    <bpmn:sequenceFlow id="Flow_7" sourceRef="Yes" targetRef="Keep" name="Нет">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">Нет</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_8" sourceRef="Keep" targetRef="KeepEnd" />
+    <bpmn:sequenceFlow id="Flow_9" sourceRef="Yes" targetRef="Recheck" name="Да">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">Да</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_10" sourceRef="Recheck" targetRef="Valid" />
+    <bpmn:sequenceFlow id="Flow_11" sourceRef="Valid" targetRef="Switch" name="Да">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">Да</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_12" sourceRef="Valid" targetRef="Keep" name="Нет">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">Нет</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_13" sourceRef="Switch" targetRef="Done" />
+  </bpmn:process>
+  <bpmn:collaboration id="Collaboration">
+    <bpmn:participant id="Store" name="Магазин · StoreAssist" processRef="Process_06_bpmn_search_handover" />
+  </bpmn:collaboration>
+  <bpmndi:BPMNDiagram id="Diagram">
+    <bpmndi:BPMNPlane id="Plane" bpmnElement="Collaboration">
+      <bpmndi:BPMNShape id="Shape_Store" bpmnElement="Store" isHorizontal="true">
+        <dc:Bounds x="30" y="140" width="2632" height="1016.0" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Lane_0" bpmnElement="Lane_0" isHorizontal="true">
+        <dc:Bounds x="60" y="140" width="2602" height="282.0" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Lane_1" bpmnElement="Lane_1" isHorizontal="true">
+        <dc:Bounds x="60" y="422.0" width="2602" height="292.0" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Lane_2" bpmnElement="Lane_2" isHorizontal="true">
+        <dc:Bounds x="60" y="714.0" width="2602" height="442.0" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Need" bpmnElement="Need">
+        <dc:Bounds x="305.0" y="237.0" width="34.0" height="34.0" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="252.0" y="284.0" width="140.0" height="42.4" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Choose" bpmnElement="Choose">
+        <dc:Bounds x="400.0" y="201.0" width="250.0" height="106.0" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Check" bpmnElement="Check">
+        <dc:Bounds x="680.0" y="785.0" width="245.0" height="106.0" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Allowed" bpmnElement="Allowed" isMarkerVisible="true">
+        <dc:Bounds x="1010.0" y="812.0" width="52.0" height="52.0" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="947.0" y="911.9" width="178.0" height="24.2" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_No" bpmnElement="No">
+        <dc:Bounds x="1228.0" y="911.0" width="34.0" height="34.0" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1164.0" y="969.0" width="162.0" height="42.4" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Offer" bpmnElement="Offer">
+        <dc:Bounds x="1210.0" y="760.0" width="245.0" height="96.0" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Reply" bpmnElement="Reply">
+        <dc:Bounds x="1510.0" y="488.0" width="245.0" height="96.0" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Yes" bpmnElement="Yes" isMarkerVisible="true">
+        <dc:Bounds x="1860.0" y="510.0" width="52.0" height="52.0" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1797.0" y="609.9" width="178.0" height="24.2" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Keep" bpmnElement="Keep">
+        <dc:Bounds x="2020.0" y="760.0" width="250.0" height="96.0" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_KeepEnd" bpmnElement="KeepEnd">
+        <dc:Bounds x="2460.0" y="881.0" width="34.0" height="34.0" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2396.0" y="939.0" width="162.0" height="24.2" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Recheck" bpmnElement="Recheck">
+        <dc:Bounds x="1520.0" y="915.0" width="250.0" height="106.0" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Valid" bpmnElement="Valid" isMarkerVisible="true">
+        <dc:Bounds x="1860.0" y="942.0" width="52.0" height="52.0" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1797.0" y="1032.8" width="178.0" height="42.4" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Switch" bpmnElement="Switch">
+        <dc:Bounds x="2020.0" y="960.0" width="250.0" height="96.0" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Done" bpmnElement="Done">
+        <dc:Bounds x="2460.0" y="991.0" width="34.0" height="34.0" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2396.0" y="1064.8" width="162.0" height="42.4" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Edge_0" bpmnElement="Flow_0">
+        <di:waypoint x="339.0" y="254.0" />
+        <di:waypoint x="400.0" y="254.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_1" bpmnElement="Flow_1">
+        <di:waypoint x="525.0" y="307.0" />
+        <di:waypoint x="525.0" y="838.0" />
+        <di:waypoint x="680.0" y="838.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_2" bpmnElement="Flow_2">
+        <di:waypoint x="925.0" y="838.0" />
+        <di:waypoint x="1010.0" y="838.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_3" bpmnElement="Flow_3">
+        <di:waypoint x="1062.0" y="838.0" />
+        <di:waypoint x="1172.0" y="838.0" />
+        <di:waypoint x="1172.0" y="928.0" />
+        <di:waypoint x="1228.0" y="928.0" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1081.5" y="842.0" width="38" height="26" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_4" bpmnElement="Flow_4">
+        <di:waypoint x="1036.0" y="812.0" />
+        <di:waypoint x="1188.0" y="812.0" />
+        <di:waypoint x="1188.0" y="808.0" />
+        <di:waypoint x="1210.0" y="808.0" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1028.6" y="778.0" width="30" height="26" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_5" bpmnElement="Flow_5">
+        <di:waypoint x="1455.0" y="808.0" />
+        <di:waypoint x="1483.0" y="808.0" />
+        <di:waypoint x="1483.0" y="536.0" />
+        <di:waypoint x="1510.0" y="536.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_6" bpmnElement="Flow_6">
+        <di:waypoint x="1755.0" y="536.0" />
+        <di:waypoint x="1860.0" y="536.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_7" bpmnElement="Flow_7">
+        <di:waypoint x="1912.0" y="536.0" />
+        <di:waypoint x="2145.0" y="536.0" />
+        <di:waypoint x="2145.0" y="760.0" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1927.95" y="506.0" width="38" height="26" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_8" bpmnElement="Flow_8">
+        <di:waypoint x="2270.0" y="808.0" />
+        <di:waypoint x="2375.0" y="808.0" />
+        <di:waypoint x="2375.0" y="898.0" />
+        <di:waypoint x="2460.0" y="898.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_9" bpmnElement="Flow_9">
+        <di:waypoint x="1886.0" y="562.0" />
+        <di:waypoint x="2005.0" y="562.0" />
+        <di:waypoint x="2005.0" y="893.0" />
+        <di:waypoint x="1645.0" y="893.0" />
+        <di:waypoint x="1645.0" y="915.0" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1876.95" y="570.0" width="30" height="26" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_10" bpmnElement="Flow_10">
+        <di:waypoint x="1770.0" y="968.0" />
+        <di:waypoint x="1860.0" y="968.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_11" bpmnElement="Flow_11">
+        <di:waypoint x="1912.0" y="968.0" />
+        <di:waypoint x="1966.0" y="968.0" />
+        <di:waypoint x="1966.0" y="1008.0" />
+        <di:waypoint x="2020.0" y="1008.0" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1924.0" y="938.0" width="30" height="26" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_12" bpmnElement="Flow_12">
+        <di:waypoint x="1886.0" y="942.0" />
+        <di:waypoint x="1886.0" y="914.0" />
+        <di:waypoint x="2145.0" y="914.0" />
+        <di:waypoint x="2145.0" y="856.0" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1839.0" y="910.8" width="38" height="26" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_13" bpmnElement="Flow_13">
+        <di:waypoint x="2270.0" y="1008.0" />
+        <di:waypoint x="2460.0" y="1008.0" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2f0eb">
+  <title>StoreAssist — интерактивный макет</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=20261019-logo08">
+  <link rel="stylesheet" href="styles.css?v=20261019-design17">
+  <link rel="stylesheet" href="design.css?v=20261019-design17">
+  <link rel="stylesheet" href="finish.css?v=20261019-design17">
+  <script src="engine.js?v=20261019-design17" defer></script>
+  <script src="fixtures.js?v=20261019-design17" defer></script>
+  <script src="app.js?v=20261019-design17" defer></script>
+</head>
+<body>
+  <a class="skip" href="#workspaces">К рабочим экранам</a>
+  <header class="demo-header">
+    <a class="demo-brand" href="#" data-action="home"><img class="brand-icon" src="logo.svg?v=20261019-logo08" width="31" height="31" alt="">StoreAssist<span class="demo-tag">Макеты</span></a>
+    <div class="demo-tools"><a href="../../docs/08-SCREEN-MAP.md">Карта экранов ↗</a><button class="quiet" data-action="reset">Начать заново</button></div>
+  </header>
+  <main>
+    <section class="intro">
+      <div><p class="eyebrow">ОСНОВНОЙ СЦЕНАРИЙ · TO-BE</p><h1>Выдача товара со склада</h1><p class="intro-note">Два рабочих места. Один запрос — от выбора вещи до передачи продавцу.</p></div>
+      <div class="demo-info"><span class="info-dot"></span><div><strong>Демонстрационные данные</strong><span>Один магазин · продавец и сотрудник склада</span></div></div>
+    </section>
+    <section class="workspace-bar" aria-label="Настройки демонстрации">
+      <div class="view-switch" role="group" aria-label="Рабочие места">
+        <button data-action="view" data-view="both" aria-pressed="true">Два рабочих места</button>
+        <button data-action="view" data-view="seller" aria-pressed="false">Продавец</button>
+        <button data-action="view" data-view="warehouse" aria-pressed="false">Склад</button>
+      </div>
+      <p>Выберите рабочее место. <a id="fixture-link" href="?demo=stress">Проверочная очередь: 20 запросов</a></p>
+    </section>
+    <details class="demo-guide"><summary>Шаги демонстрации</summary><div class="journey" id="journey" aria-label="Ход демонстрации"></div></details>
+    <details class="demo-actors"><summary>Участники демонстрации</summary><p>Переключите участника, чтобы ответить на предложение от его лица. Это управление макетом.</p><div class="actor-selectors"><label for="demo-seller">Продавец<select id="demo-seller"><option value="seller-anna">Анна</option><option value="seller-elena">Елена</option></select></label><label for="demo-warehouse">Склад<select id="demo-warehouse"><option value="warehouse-mikhail">Михаил</option><option value="warehouse-pavel">Павел · склад</option><option value="senior-daria">Дарья · старший склада</option><option value="senior-olga">Ольга · старший склада</option><option value="manager-irina">Ирина · руководитель смены</option></select></label></div></details>
+    <details class="demo-actors"><summary>Условия демонстрации</summary><p>Вымышленные источники и сбой следующего действия. Изменение этих настроек не выполняет реальных внешних операций.</p><div class="actor-selectors"><label>Остаток<select id="demo-stock"><option value="positive">Положительный</option><option value="zero">Актуальный ноль</option><option value="unknown">Источник недоступен</option><option value="stale">Устаревший положительный</option><option value="stale-zero">Устаревший ноль</option></select></label><label>Каталог<select id="demo-catalog"><option value="ready">Доступен</option><option value="empty">Пустой</option><option value="failed">Недоступен</option></select></label><label>Связи альтернатив<select id="demo-relations"><option value="ready">Готовые связи</option><option value="empty">Связей нет</option><option value="failed">Сбой связей</option></select></label><label>Размещение<select id="demo-placement"><option value="current">Исходный адрес</option><option value="updated">Новый адрес источника</option><option value="missing">Адрес не задан</option><option value="failed">Сбой чтения</option></select></label><label>Связь со StoreAssist<select id="demo-connection"><option value="online">Доступна</option><option value="offline">Недоступна</option><option value="lost-before">Потеря ответа: действие не сохранено</option><option value="lost-after">Потеря ответа: действие сохранено</option></select></label></div></details>
+    <section class="workspaces" id="workspaces" aria-label="Макеты рабочих мест">
+      <section class="seller-workspace" aria-labelledby="seller-title"><div class="workspace-caption"><h2 id="seller-title">Продавец</h2><span id="seller-actor-caption">iPod · Анна</span></div><div class="device"><div class="device-top" aria-hidden="true"><span></span></div><div class="phone-app" id="seller-app"></div><div class="device-bottom" aria-hidden="true"><span></span></div></div></section>
+      <section class="warehouse-workspace" aria-labelledby="warehouse-title"><div class="workspace-caption"><h2 id="warehouse-title">Сотрудник склада</h2><span id="warehouse-actor-caption">Терминал · Михаил</span></div><div class="terminal" id="warehouse-app"></div></section>
+    </section>
+    <p class="scope-note">В макете доступны выдача, «Не найдено», отмена и передача работы коллеге. Дополнительно доступны альтернативы, проверки расхождений и роли старшего / руководителя. Источники и сбои моделируются локально.</p>
+    <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+  </main>
+  <dialog id="reset-dialog"><form method="dialog"><h2>Начать демонстрацию заново?</h2><p>Демонстрационные запросы и история в этом браузере будут очищены.</p><div class="dialog-actions"><button value="cancel" class="secondary">Продолжить работу</button><button value="confirm" class="primary">Начать заново</button></div></form></dialog>
+</body>
+</html>

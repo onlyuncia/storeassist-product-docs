@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='utf-8'?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_01_bpmn_as_is" targetNamespace="https://storeassist.example/portfolio/bpmn" exporter="StoreAssist diagram builder">
+  <bpmn:process id="Process_01_bpmn_as_is" name="AS-IS · запрос товара со склада" isExecutable="false">
+    <bpmn:documentation>Исходный процесс: продавец с iPod и сотрудник склада со складским терминалом.
+Отмена: продавец отмечал её в iPod, склад видел её на терминале. Детальный порядок разрешения отмены в AS-IS не установлен.
+Статусы исходного приложения не воспроизводятся. При неудачном поиске результат сообщался лично в зале.
+Требования: </bpmn:documentation>
+    <bpmn:laneSet id="Lanes">
+      <bpmn:lane id="Lane_0" name="Продавец · iPod">
+        <bpmn:flowNodeRef>Need</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Choose</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Stock</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Send</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Continue</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>End</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_1" name="Сотрудник склада">
+        <bpmn:flowNodeRef>Search</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Found</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Deliver</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Confirm</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Tell</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="Need" name="Нужен вариант товара">
+      <bpmn:outgoing>Flow_0</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:manualTask id="Choose" name="Уточнить товар, размер и цвет">
+      <bpmn:incoming>Flow_0</bpmn:incoming>
+      <bpmn:outgoing>Flow_1</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:userTask id="Stock" name="Проверить наличие на iPod">
+      <bpmn:incoming>Flow_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_2</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Send" name="Отправить запрос; видеть очередь">
+      <bpmn:incoming>Flow_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_3</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:manualTask id="Search" name="Искать вещь по стеллажу и секции">
+      <bpmn:incoming>Flow_3</bpmn:incoming>
+      <bpmn:outgoing>Flow_4</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:exclusiveGateway id="Found" name="Вещь найдена?">
+      <bpmn:incoming>Flow_4</bpmn:incoming>
+      <bpmn:outgoing>Flow_5</bpmn:outgoing>
+      <bpmn:outgoing>Flow_7</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:manualTask id="Deliver" name="Вынести вещь; найти продавца и передать">
+      <bpmn:incoming>Flow_5</bpmn:incoming>
+      <bpmn:outgoing>Flow_6</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:userTask id="Confirm" name="Подтвердить передачу на терминале">
+      <bpmn:incoming>Flow_6</bpmn:incoming>
+      <bpmn:outgoing>Flow_9</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:manualTask id="Tell" name="Выйти в зал; лично сообщить о неудаче">
+      <bpmn:incoming>Flow_7</bpmn:incoming>
+      <bpmn:outgoing>Flow_8</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:manualTask id="Continue" name="Продолжить обслуживание">
+      <bpmn:incoming>Flow_8</bpmn:incoming>
+      <bpmn:incoming>Flow_9</bpmn:incoming>
+      <bpmn:outgoing>Flow_10</bpmn:outgoing>
+    </bpmn:manualTask>
+    <bpmn:endEvent id="End" name="Обслуживание продолжается">
+      <bpmn:incoming>Flow_10</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0" sourceRef="Need" targetRef="Choose" />
+    <bpmn:sequenceFlow id="Flow_1" sourceRef="Choose" targetRef="Stock" />
+    <bpmn:sequenceFlow id="Flow_2" sourceRef="Stock" targetRef="Send" />
+    <bpmn:sequenceFlow id="Flow_3" sourceRef="Send" targetRef="Search" />
+    <bpmn:sequenceFlow id="Flow_4" sourceRef="Search" targetRef="Found" />
+    <bpmn:sequenceFlow id="Flow_5" sourceRef="Found" targetRef="Deliver" name="Да">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">Да</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_6" sourceRef="Deliver" targetRef="Confirm" />
+    <bpmn:sequenceFlow id="Flow_7" sourceRef="Found" targetRef="Tell" name="Нет">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">Нет</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_8" sourceRef="Tell" targetRef="Continue" />
+    <bpmn:sequenceFlow id="Flow_9" sourceRef="Confirm" targetRef="Continue" />
+    <bpmn:sequenceFlow id="Flow_10" sourceRef="Continue" targetRef="End" />
+  </bpmn:process>
+  <bpmn:collaboration id="Collaboration">
+    <bpmn:participant id="Store" name="Магазин · исходный процесс" processRef="Process_01_bpmn_as_is" />
+  </bpmn:collaboration>
+  <bpmndi:BPMNDiagram id="Diagram">
+    <bpmndi:BPMNPlane id="Plane" bpmnElement="Collaboration">
+      <bpmndi:BPMNShape id="Shape_Store" bpmnElement="Store" isHorizontal="true">
+        <dc:Bounds x="30" y="140" width="2514" height="981.5" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Lane_0" bpmnElement="Lane_0" isHorizontal="true">
+        <dc:Bounds x="60" y="140" width="2484" height="347.0" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Lane_1" bpmnElement="Lane_1" isHorizontal="true">
+        <dc:Bounds x="60" y="487.0" width="2484" height="634.5" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Need" bpmnElement="Need">
+        <dc:Bounds x="348.75" y="255.25" width="42.5" height="42.5" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="282.5" y="314.0" width="175.0" height="53.0" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Choose" bpmnElement="Choose">
+        <dc:Bounds x="461.25" y="225.25" width="237.5" height="102.5" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Stock" bpmnElement="Stock">
+        <dc:Bounds x="773.75" y="225.25" width="237.5" height="102.5" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Send" bpmnElement="Send">
+        <dc:Bounds x="1086.25" y="225.25" width="237.5" height="102.5" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Search" bpmnElement="Search">
+        <dc:Bounds x="1355.0" y="584.75" width="275.0" height="102.5" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Found" bpmnElement="Found" isMarkerVisible="true">
+        <dc:Bounds x="1755.0" y="603.5" width="65.0" height="65.0" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1676.25" y="728.375" width="222.5" height="30.25" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Deliver" bpmnElement="Deliver">
+        <dc:Bounds x="1942.5" y="584.75" width="275.0" height="102.5" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Confirm" bpmnElement="Confirm">
+        <dc:Bounds x="1942.5" y="809.75" width="275.0" height="102.5" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Tell" bpmnElement="Tell">
+        <dc:Bounds x="1355.0" y="809.75" width="275.0" height="102.5" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_Continue" bpmnElement="Continue">
+        <dc:Bounds x="1967.5" y="225.25" width="237.5" height="102.5" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Shape_End" bpmnElement="End">
+        <dc:Bounds x="2355.0" y="255.25" width="42.5" height="42.5" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2275.0" y="314.0" width="202.5" height="53.0" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Edge_0" bpmnElement="Flow_0">
+        <di:waypoint x="391.25" y="276.5" />
+        <di:waypoint x="461.25" y="276.5" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_1" bpmnElement="Flow_1">
+        <di:waypoint x="698.75" y="276.5" />
+        <di:waypoint x="773.75" y="276.5" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_2" bpmnElement="Flow_2">
+        <di:waypoint x="1011.25" y="276.5" />
+        <di:waypoint x="1086.25" y="276.5" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_3" bpmnElement="Flow_3">
+        <di:waypoint x="1205.0" y="327.75" />
+        <di:waypoint x="1205.0" y="636.0" />
+        <di:waypoint x="1355.0" y="636.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_4" bpmnElement="Flow_4">
+        <di:waypoint x="1630.0" y="636.0" />
+        <di:waypoint x="1755.0" y="636.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_5" bpmnElement="Flow_5">
+        <di:waypoint x="1820.0" y="636.0" />
+        <di:waypoint x="1942.5" y="636.0" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1847.875" y="606.0" width="30" height="26" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_6" bpmnElement="Flow_6">
+        <di:waypoint x="2080.0" y="687.25" />
+        <di:waypoint x="2080.0" y="809.75" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_7" bpmnElement="Flow_7">
+        <di:waypoint x="1787.5" y="668.5" />
+        <di:waypoint x="1787.5" y="703.5" />
+        <di:waypoint x="1492.5" y="703.5" />
+        <di:waypoint x="1492.5" y="809.75" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1796.5" y="678.25" width="38" height="26" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_8" bpmnElement="Flow_8">
+        <di:waypoint x="1630.0" y="861.0" />
+        <di:waypoint x="1665.0" y="861.0" />
+        <di:waypoint x="1665.0" y="954.75" />
+        <di:waypoint x="2267.5" y="954.75" />
+        <di:waypoint x="2267.5" y="276.5" />
+        <di:waypoint x="2205.0" y="276.5" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_9" bpmnElement="Flow_9">
+        <di:waypoint x="2217.5" y="861.0" />
+        <di:waypoint x="2252.5" y="861.0" />
+        <di:waypoint x="2252.5" y="362.75" />
+        <di:waypoint x="2086.25" y="362.75" />
+        <di:waypoint x="2086.25" y="327.75" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Edge_10" bpmnElement="Flow_10">
+        <di:waypoint x="2086.25" y="225.25" />
+        <di:waypoint x="2086.25" y="190.25" />
+        <di:waypoint x="2376.25" y="190.25" />
+        <di:waypoint x="2376.25" y="255.25" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

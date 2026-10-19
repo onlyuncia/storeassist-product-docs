@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3024" height="1906" viewBox="0 0 3024 1906" role="img" aria-labelledby="title desc"><title id="title">TO-BE · отмена и фактическая передача</title><desc id="desc">Продавец запрашивает отмену; начатый запрос завершает текущий складской исполнитель.</desc>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 L8 4.5 L0 9 Z" fill="#42536c" stroke="#42536c" stroke-width="1"/></marker></defs>
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="32" y="38.0" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="27" font-weight="650" fill="#1d2c42"><tspan x="32" dy="0">TO-BE · отмена и фактическая передача</tspan></text>
+<text x="32" y="76.0" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#607087"><tspan x="32" dy="0">Продавец запрашивает отмену; начатый запрос завершает текущий складской исполнитель.</tspan></text>
+<g data-task-marker="manualTask" transform="translate(35,98)"><path d="M5 16 L3 12 Q2 10 4 9 Q5 8 7 11 L8 12 L8 4 Q8 2 10 2 Q12 2 12 4 L12 11 L12 2 Q12 0 14 0 Q16 0 16 2 L16 11 L16 4 Q16 2 18 2 Q20 2 20 4 L20 13 L20 8 Q20 6 22 6 Q24 6 24 8 L24 17 Q24 24 17 24 L13 24 Q9 24 7 20 Z" transform="scale(.82)" fill="#fff" stroke="#34527c" stroke-width="1.5" stroke-linejoin="round"/></g>
+<text x="68" y="115.0" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#496286"><tspan x="68" dy="0">Вне приложения</tspan></text>
+<g data-task-marker="userTask" transform="translate(410,98)"><circle cx="11" cy="5" r="4" fill="white" stroke="#34527c" stroke-width="1.5"/><path d="M3 22 L3 16 Q3 11 8 11 L14 11 Q19 11 19 16 L19 22 Z M7 16 L7 22 M15 16 L15 22" fill="white" stroke="#34527c" stroke-width="1.5" stroke-linejoin="round"/></g>
+<text x="443" y="115.0" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#496286"><tspan x="443" dy="0">Сотрудник в приложении</tspan></text>
+<g data-task-marker="serviceTask" transform="translate(850,98)"><polygon points="13.62,9.00 15.55,10.50 15.11,11.95 12.67,12.12 11.97,12.97 12.28,15.40 10.95,16.11 9.10,14.51 8.00,14.62 6.50,16.55 5.05,16.11 4.88,13.67 4.03,12.97 1.60,13.28 0.89,11.95 2.49,10.10 2.38,9.00 0.45,7.50 0.89,6.05 3.33,5.88 4.03,5.03 3.72,2.60 5.05,1.89 6.90,3.49 8.00,3.38 9.50,1.45 10.95,1.89 11.12,4.33 11.97,5.03 14.40,4.72 15.11,6.05 13.51,7.90" fill="white" stroke="#34527c" stroke-width="1.2"/><circle cx="8" cy="9" r="2.464" fill="white" stroke="#34527c" stroke-width="1.2"/><polygon points="23.53,18.00 25.08,19.21 24.73,20.37 22.76,20.51 22.20,21.20 22.44,23.16 21.37,23.73 19.88,22.44 19.00,22.53 17.79,24.08 16.63,23.73 16.49,21.76 15.80,21.20 13.84,21.44 13.27,20.37 14.56,18.88 14.47,18.00 12.92,16.79 13.27,15.63 15.24,15.49 15.80,14.80 15.56,12.84 16.63,12.27 18.12,13.56 19.00,13.47 20.21,11.92 21.37,12.27 21.51,14.24 22.20,14.80 24.16,14.56 24.73,15.63 23.44,17.12" fill="white" stroke="#34527c" stroke-width="1.2"/><circle cx="19" cy="18" r="1.9840000000000002" fill="white" stroke="#34527c" stroke-width="1.2"/></g>
+<text x="883" y="115.0" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#496286"><tspan x="883" dy="0">Автоматически</tspan></text>
+<rect x="30" y="140" width="2964" height="309.5" fill="#f7f9fc" stroke="#c8d2df"/>
+<rect x="30" y="140" width="200" height="309.5" fill="#edf2f8" stroke="#c8d2df"/>
+<text x="130.0" y="294.75" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="600" fill="#1d2c42"><tspan x="130.0" dy="0">Текущий продавец</tspan></text>
+<rect x="30" y="449.5" width="2964" height="359.5" fill="#ffffff" stroke="#c8d2df"/>
+<rect x="30" y="449.5" width="200" height="359.5" fill="#edf2f8" stroke="#c8d2df"/>
+<text x="130.0" y="629.25" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="600" fill="#1d2c42"><tspan x="130.0" dy="0">StoreAssist</tspan></text>
+<rect x="30" y="809.0" width="2964" height="572.0" fill="#f7f9fc" stroke="#c8d2df"/>
+<rect x="30" y="809.0" width="200" height="572.0" fill="#edf2f8" stroke="#c8d2df"/>
+<text x="130.0" y="1084.6" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="600" fill="#1d2c42"><tspan x="130.0" dy="0">Складской</tspan><tspan x="130.0" dy="20.8">исполнитель</tspan></text>
+<rect x="30" y="1381.0" width="2964" height="334.5" fill="#ffffff" stroke="#c8d2df"/>
+<rect x="30" y="1381.0" width="200" height="334.5" fill="#edf2f8" stroke="#c8d2df"/>
+<text x="130.0" y="1548.25" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="600" fill="#1d2c42"><tspan x="130.0" dy="0">Руководитель смены</tspan></text>
+<polyline data-flow="Flow_0" points="391.25,264.0 467.5,264.0" fill="none" stroke="#42536c" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline data-flow="Flow_1" points="761.25,264.0 796.25,264.0 796.25,611.0 861.25,611.0" fill="none" stroke="#42536c" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline data-flow="Flow_2" points="926.25,611.0 1101.25,611.0 1101.25,548.5 1136.25,548.5" fill="none" stroke="#42536c" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline data-flow="Flow_3" points="1417.5,548.5 1530.0,548.5" fill="none" stroke="#42536c" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline data-flow="Flow_4" points="893.75,643.5 1108.75,643.5 1108.75,698.5 1136.25,698.5" fill="none" stroke="#42536c" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline data-flow="Flow_5" points="1417.5,698.5 1530.0,698.5" fill="none" stroke="#42536c" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline data-flow="Flow_6" points="893.75,578.5 893.75,473.5 1895.625,473.5 1895.625,559.75" fill="none" stroke="#42536c" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline data-flow="Flow_7" points="2036.25,611.0 2248.75,611.0 2248.75,881.75" fill="none" stroke="#42536c" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline data-flow="Flow_8" points="2392.5,933.0 2492.5,933.0" fill="none" stroke="#42536c" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline data-flow="Flow_9" points="2557.5,933.0 2817.5,933.0 2817.5,1617.5 2273.75,1617.5 2273.75,1590.0" fill="none" stroke="#42536c" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline data-flow="Flow_10" points="2525.0,965.5 2525.0,1110.5 2532.5,1110.5 2532.5,1170.5" fill="none" stroke="#42536c" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline data-flow="Flow_11" points="2430.0,1530.0 2773.75,1530.0 2773.75,1170.5 2532.5,1170.5" fill="none" stroke="#42536c" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline data-flow="Flow_12" points="2500.0,1138.0 2500.0,1108.0 2192.5,1108.0" fill="none" stroke="#42536c" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline data-flow="Flow_13" points="1905.0,1108.0 1785.0,1108.0" fill="none" stroke="#42536c" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline data-flow="Flow_14" points="2500.0,1203.0 2500.0,1270.5 2317.5,1270.5" fill="none" stroke="#42536c" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline data-flow="Flow_15" points="2030.0,1270.5 1910.0,1270.5" fill="none" stroke="#42536c" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline data-flow="Flow_16" points="2532.5,1170.5 2532.5,1448.75 1782.5,1448.75 1782.5,1530.0 1755.0,1530.0" fill="none" stroke="#42536c" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline data-flow="Flow_17" points="1598.75,1470.0 1598.75,933.0 2105.0,933.0" fill="none" stroke="#42536c" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="987.5" y="598.0" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#42536c"><tspan x="987.5" dy="0">Создан</tspan></text>
+<text x="904.5" y="668.5" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#42536c"><tspan x="904.5" dy="0">Уже финален</tspan></text>
+<text x="857.75" y="545.75" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#42536c"><tspan x="857.75" dy="0">Начат</tspan></text>
+<text x="2596.5" y="920.0" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#42536c"><tspan x="2596.5" dy="0">Да</tspan></text>
+<text x="2497.0" y="991.25" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#42536c"><tspan x="2497.0" dy="0">Нет</tspan></text>
+<text x="2453.875" y="1095.0" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#42536c"><tspan x="2453.875" dy="0">Уже передан</tspan></text>
+<text x="2436.125" y="1291.3" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#42536c"><tspan x="2436.125" dy="0">Не передан;</tspan><tspan x="2436.125" dy="18.2">положение</tspan><tspan x="2436.125" dy="18.2">урегулировано</tspan></text>
+<text x="2608.5" y="1271.8875" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#42536c"><tspan x="2608.5" dy="0">Факт не выяснен</tspan></text>
+<g data-node="Need">
+<g transform="translate(348.75,242.75) scale(1.25)"><circle cx="17" cy="17" r="16" fill="white" stroke="#34527c" stroke-width="1.8"/>
+</g>
+<text x="370.0" y="333.0" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#1d2c42"><tspan x="370.0" dy="0">Запрос стал неактуален</tspan></text>
+</g>
+<g data-node="Cancel">
+<rect data-task-type="userTask" x="467.5" y="204.0" width="293.75" height="120.0" rx="11" fill="#edf4ff" stroke="#7d9cc9" stroke-width="1.5"/>
+<g data-task-marker="userTask" transform="translate(476.5,213.0)"><circle cx="11" cy="5" r="4" fill="white" stroke="#34527c" stroke-width="1.5"/><path d="M3 22 L3 16 Q3 11 8 11 L14 11 Q19 11 19 16 L19 22 Z M7 16 L7 22 M15 16 L15 22" fill="white" stroke="#34527c" stroke-width="1.5" stroke-linejoin="round"/></g>
+<text x="626.375" y="258.6" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#1d2c42"><tspan x="626.375" dy="0">Запросить отмену</tspan><tspan x="626.375" dy="20.8">с обязательной причиной</tspan></text>
+</g>
+<g data-node="State">
+<path d="M893.75,578.5 L926.25,611.0 L893.75,643.5 L861.25,611.0 Z" fill="white" stroke="#6f86a5" stroke-width="1.8"/>
+<g transform="translate(861.25,578.5) scale(1.25)">
+<path d="M18,18 L34,34 M34,18 L18,34" stroke="#42536c" stroke-width="2"/>
+</g>
+<text x="893.75" y="723.5" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="600" fill="#1d2c42"><tspan x="893.75" dy="0">Текущее состояние?</tspan></text>
+</g>
+<g data-node="Immediate">
+<rect data-task-type="serviceTask" x="1136.25" y="497.25" width="281.25" height="102.5" rx="11" fill="#edf4ff" stroke="#7d9cc9" stroke-width="1.5"/>
+<g data-task-marker="serviceTask" transform="translate(1145.25,506.25)"><polygon points="13.62,9.00 15.55,10.50 15.11,11.95 12.67,12.12 11.97,12.97 12.28,15.40 10.95,16.11 9.10,14.51 8.00,14.62 6.50,16.55 5.05,16.11 4.88,13.67 4.03,12.97 1.60,13.28 0.89,11.95 2.49,10.10 2.38,9.00 0.45,7.50 0.89,6.05 3.33,5.88 4.03,5.03 3.72,2.60 5.05,1.89 6.90,3.49 8.00,3.38 9.50,1.45 10.95,1.89 11.12,4.33 11.97,5.03 14.40,4.72 15.11,6.05 13.51,7.90" fill="white" stroke="#34527c" stroke-width="1.2"/><circle cx="8" cy="9" r="2.464" fill="white" stroke="#34527c" stroke-width="1.2"/><polygon points="23.53,18.00 25.08,19.21 24.73,20.37 22.76,20.51 22.20,21.20 22.44,23.16 21.37,23.73 19.88,22.44 19.00,22.53 17.79,24.08 16.63,23.73 16.49,21.76 15.80,21.20 13.84,21.44 13.27,20.37 14.56,18.88 14.47,18.00 12.92,16.79 13.27,15.63 15.24,15.49 15.80,14.80 15.56,12.84 16.63,12.27 18.12,13.56 19.00,13.47 20.21,11.92 21.37,12.27 21.51,14.24 22.20,14.80 24.16,14.56 24.73,15.63 23.44,17.12" fill="white" stroke="#34527c" stroke-width="1.2"/><circle cx="19" cy="18" r="1.9840000000000002" fill="white" stroke="#34527c" stroke-width="1.2"/></g>
+<text x="1288.875" y="543.1" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#1d2c42"><tspan x="1288.875" dy="0">Сохранить «Отменён»</tspan><tspan x="1288.875" dy="20.8">до принятия складом</tspan></text>
+</g>
+<g data-node="ImmediateEnd">
+<g transform="translate(1530.0,527.25) scale(1.25)"><circle cx="17" cy="17" r="16" fill="white" stroke="#34527c" stroke-width="3.5"/>
+</g>
+<text x="1551.25" y="606.125" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#1d2c42"><tspan x="1551.25" dy="0">Отменён</tspan></text>
+</g>
+<g data-node="Final">
+<rect data-task-type="serviceTask" x="1136.25" y="647.25" width="281.25" height="102.5" rx="11" fill="#edf4ff" stroke="#7d9cc9" stroke-width="1.5"/>
+<g data-task-marker="serviceTask" transform="translate(1145.25,656.25)"><polygon points="13.62,9.00 15.55,10.50 15.11,11.95 12.67,12.12 11.97,12.97 12.28,15.40 10.95,16.11 9.10,14.51 8.00,14.62 6.50,16.55 5.05,16.11 4.88,13.67 4.03,12.97 1.60,13.28 0.89,11.95 2.49,10.10 2.38,9.00 0.45,7.50 0.89,6.05 3.33,5.88 4.03,5.03 3.72,2.60 5.05,1.89 6.90,3.49 8.00,3.38 9.50,1.45 10.95,1.89 11.12,4.33 11.97,5.03 14.40,4.72 15.11,6.05 13.51,7.90" fill="white" stroke="#34527c" stroke-width="1.2"/><circle cx="8" cy="9" r="2.464" fill="white" stroke="#34527c" stroke-width="1.2"/><polygon points="23.53,18.00 25.08,19.21 24.73,20.37 22.76,20.51 22.20,21.20 22.44,23.16 21.37,23.73 19.88,22.44 19.00,22.53 17.79,24.08 16.63,23.73 16.49,21.76 15.80,21.20 13.84,21.44 13.27,20.37 14.56,18.88 14.47,18.00 12.92,16.79 13.27,15.63 15.24,15.49 15.80,14.80 15.56,12.84 16.63,12.27 18.12,13.56 19.00,13.47 20.21,11.92 21.37,12.27 21.51,14.24 22.20,14.80 24.16,14.56 24.73,15.63 23.44,17.12" fill="white" stroke="#34527c" stroke-width="1.2"/><circle cx="19" cy="18" r="1.9840000000000002" fill="white" stroke="#34527c" stroke-width="1.2"/></g>
+<text x="1288.875" y="693.1" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#1d2c42"><tspan x="1288.875" dy="0">Показать сохранённый</tspan><tspan x="1288.875" dy="20.8">финальный исход</tspan></text>
+</g>
+<g data-node="FinalEnd">
+<g transform="translate(1530.0,677.25) scale(1.25)"><circle cx="17" cy="17" r="16" fill="white" stroke="#34527c" stroke-width="3.5"/>
+</g>
+<text x="1551.25" y="763.875" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#1d2c42"><tspan x="1551.25" dy="0">Исход не переписан</tspan></text>
+</g>
+<g data-node="Flag">
+<rect data-task-type="serviceTask" x="1755.0" y="559.75" width="281.25" height="102.5" rx="11" fill="#edf4ff" stroke="#7d9cc9" stroke-width="1.5"/>
+<g data-task-marker="serviceTask" transform="translate(1764.0,568.75)"><polygon points="13.62,9.00 15.55,10.50 15.11,11.95 12.67,12.12 11.97,12.97 12.28,15.40 10.95,16.11 9.10,14.51 8.00,14.62 6.50,16.55 5.05,16.11 4.88,13.67 4.03,12.97 1.60,13.28 0.89,11.95 2.49,10.10 2.38,9.00 0.45,7.50 0.89,6.05 3.33,5.88 4.03,5.03 3.72,2.60 5.05,1.89 6.90,3.49 8.00,3.38 9.50,1.45 10.95,1.89 11.12,4.33 11.97,5.03 14.40,4.72 15.11,6.05 13.51,7.90" fill="white" stroke="#34527c" stroke-width="1.2"/><circle cx="8" cy="9" r="2.464" fill="white" stroke="#34527c" stroke-width="1.2"/><polygon points="23.53,18.00 25.08,19.21 24.73,20.37 22.76,20.51 22.20,21.20 22.44,23.16 21.37,23.73 19.88,22.44 19.00,22.53 17.79,24.08 16.63,23.73 16.49,21.76 15.80,21.20 13.84,21.44 13.27,20.37 14.56,18.88 14.47,18.00 12.92,16.79 13.27,15.63 15.24,15.49 15.80,14.80 15.56,12.84 16.63,12.27 18.12,13.56 19.00,13.47 20.21,11.92 21.37,12.27 21.51,14.24 22.20,14.80 24.16,14.56 24.73,15.63 23.44,17.12" fill="white" stroke="#34527c" stroke-width="1.2"/><circle cx="19" cy="18" r="1.9840000000000002" fill="white" stroke="#34527c" stroke-width="1.2"/></g>
+<text x="1907.625" y="605.6" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#1d2c42"><tspan x="1907.625" dy="0">Показать складу</tspan><tspan x="1907.625" dy="20.8">«Запрошена отмена»</tspan></text>
+</g>
+<g data-node="Fact">
+<rect data-task-type="manualTask" x="2105.0" y="881.75" width="287.5" height="102.5" rx="11" fill="#edf4ff" stroke="#7d9cc9" stroke-width="1.5"/>
+<g data-task-marker="manualTask" transform="translate(2114.0,890.75)"><path d="M5 16 L3 12 Q2 10 4 9 Q5 8 7 11 L8 12 L8 4 Q8 2 10 2 Q12 2 12 4 L12 11 L12 2 Q12 0 14 0 Q16 0 16 2 L16 11 L16 4 Q16 2 18 2 Q20 2 20 4 L20 13 L20 8 Q20 6 22 6 Q24 6 24 8 L24 17 Q24 24 17 24 L13 24 Q9 24 7 20 Z" transform="scale(.82)" fill="#fff" stroke="#34527c" stroke-width="1.5" stroke-linejoin="round"/></g>
+<text x="2260.75" y="927.6" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#1d2c42"><tspan x="2260.75" dy="0">Проверить факт передачи</tspan><tspan x="2260.75" dy="20.8">и положение вещи</tspan></text>
+</g>
+<g data-node="Dispute">
+<path d="M2525.0,900.5 L2557.5,933.0 L2525.0,965.5 L2492.5,933.0 Z" fill="white" stroke="#6f86a5" stroke-width="1.8"/>
+<g transform="translate(2492.5,900.5) scale(1.25)">
+<path d="M18,18 L34,34 M34,18 L18,34" stroke="#42536c" stroke-width="2"/>
+</g>
+<text x="2617.5" y="869.25" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="600" fill="#1d2c42"><tspan x="2617.5" dy="0">Есть спор?</tspan></text>
+</g>
+<g data-node="Help">
+<rect data-task-type="manualTask" x="2117.5" y="1470.0" width="312.5" height="120.0" rx="11" fill="#edf4ff" stroke="#7d9cc9" stroke-width="1.5"/>
+<g data-task-marker="manualTask" transform="translate(2126.5,1479.0)"><path d="M5 16 L3 12 Q2 10 4 9 Q5 8 7 11 L8 12 L8 4 Q8 2 10 2 Q12 2 12 4 L12 11 L12 2 Q12 0 14 0 Q16 0 16 2 L16 11 L16 4 Q16 2 18 2 Q20 2 20 4 L20 13 L20 8 Q20 6 22 6 Q24 6 24 8 L24 17 Q24 24 17 24 L13 24 Q9 24 7 20 Z" transform="scale(.82)" fill="#fff" stroke="#34527c" stroke-width="1.5" stroke-linejoin="round"/></g>
+<text x="2285.75" y="1524.6" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#1d2c42"><tspan x="2285.75" dy="0">Сверить факты с текущим</tspan><tspan x="2285.75" dy="20.8">продавцом и исполнителем</tspan></text>
+</g>
+<g data-node="Outcome">
+<path d="M2500.0,1138.0 L2532.5,1170.5 L2500.0,1203.0 L2467.5,1170.5 Z" fill="white" stroke="#6f86a5" stroke-width="1.8"/>
+<g transform="translate(2467.5,1138.0) scale(1.25)">
+<path d="M18,18 L34,34 M34,18 L18,34" stroke="#42536c" stroke-width="2"/>
+</g>
+<text x="2342.5" y="1056.75" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="600" fill="#1d2c42"><tspan x="2342.5" dy="0">Что установлено?</tspan></text>
+</g>
+<g data-node="Passed">
+<rect data-task-type="userTask" x="1905.0" y="1056.75" width="287.5" height="102.5" rx="11" fill="#edf4ff" stroke="#7d9cc9" stroke-width="1.5"/>
+<g data-task-marker="userTask" transform="translate(1914.0,1065.75)"><circle cx="11" cy="5" r="4" fill="white" stroke="#34527c" stroke-width="1.5"/><path d="M3 22 L3 16 Q3 11 8 11 L14 11 Q19 11 19 16 L19 22 Z M7 16 L7 22 M15 16 L15 22" fill="white" stroke="#34527c" stroke-width="1.5" stroke-linejoin="round"/></g>
+<text x="2060.75" y="1102.6" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#1d2c42"><tspan x="2060.75" dy="0">Подтвердить передачу</tspan><tspan x="2060.75" dy="20.8">на терминале</tspan></text>
+</g>
+<g data-node="PassedEnd">
+<g transform="translate(1742.5,1086.75) scale(1.25)"><circle cx="17" cy="17" r="16" fill="white" stroke="#34527c" stroke-width="3.5"/>
+</g>
+<text x="1763.75" y="1165.625" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#1d2c42"><tspan x="1763.75" dy="0">Передан</tspan></text>
+</g>
+<g data-node="Stopped">
+<rect data-task-type="userTask" x="2030.0" y="1219.25" width="287.5" height="102.5" rx="11" fill="#edf4ff" stroke="#7d9cc9" stroke-width="1.5"/>
+<g data-task-marker="userTask" transform="translate(2039.0,1228.25)"><circle cx="11" cy="5" r="4" fill="white" stroke="#34527c" stroke-width="1.5"/><path d="M3 22 L3 16 Q3 11 8 11 L14 11 Q19 11 19 16 L19 22 Z M7 16 L7 22 M15 16 L15 22" fill="white" stroke="#34527c" stroke-width="1.5" stroke-linejoin="round"/></g>
+<text x="2185.75" y="1265.1" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#1d2c42"><tspan x="2185.75" dy="0">Подтвердить отмену</tspan><tspan x="2185.75" dy="20.8">на терминале</tspan></text>
+</g>
+<g data-node="StoppedEnd">
+<g transform="translate(1867.5,1249.25) scale(1.25)"><circle cx="17" cy="17" r="16" fill="white" stroke="#34527c" stroke-width="3.5"/>
+</g>
+<text x="1888.75" y="1335.875" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#1d2c42"><tspan x="1888.75" dy="0">Отменён</tspan></text>
+</g>
+<g data-node="Wait">
+<rect data-task-type="manualTask" x="1442.5" y="1470.0" width="312.5" height="120.0" rx="11" fill="#edf4ff" stroke="#7d9cc9" stroke-width="1.5"/>
+<g data-task-marker="manualTask" transform="translate(1451.5,1479.0)"><path d="M5 16 L3 12 Q2 10 4 9 Q5 8 7 11 L8 12 L8 4 Q8 2 10 2 Q12 2 12 4 L12 11 L12 2 Q12 0 14 0 Q16 0 16 2 L16 11 L16 4 Q16 2 18 2 Q20 2 20 4 L20 13 L20 8 Q20 6 22 6 Q24 6 24 8 L24 17 Q24 24 17 24 L13 24 Q9 24 7 20 Z" transform="scale(.82)" fill="#fff" stroke="#34527c" stroke-width="1.5" stroke-linejoin="round"/></g>
+<text x="1610.75" y="1514.2" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#1d2c42"><tspan x="1610.75" dy="0">Продолжить сверку;</tspan><tspan x="1610.75" dy="20.8">не подтверждать</tspan><tspan x="1610.75" dy="20.8">предполагаемый исход</tspan></text>
+</g>
+<text x="32" y="1750.5" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="400" fill="#496286"><tspan x="32" dy="0">Связи: FR-07, FR-09, FR-10, FR-12, FR-16, RULE-08, RULE-09, RULE-27</tspan></text>
+<text x="32" y="1777.5" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#607087"><tspan x="32" dy="0">Если факт не выяснен, запрос активен с ожидающей отменой; часы ожидания и назначение сохраняются.</tspan></text>
+<text x="32" y="1804.5" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#607087"><tspan x="32" dy="0">Руководитель помогает сверить факты, но не завершает запрос вместо исполнителя. Итог сверки и причина отмены остаются в истории.</tspan></text>
+<text x="32" y="1831.5" text-anchor="start" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#607087"><tspan x="32" dy="0">Перед сохранением проверяются текущий исполнитель и состояние; завершённый исход не переписывается. Неизвестный ответ требует сверки.</tspan></text>
+</svg>

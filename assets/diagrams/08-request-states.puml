@@ -1,0 +1,46 @@
+@startuml
+title TO-BE · состояния запроса
+hide empty description
+skinparam backgroundColor white
+skinparam state {
+  BackgroundColor #EDF4FF
+  BorderColor #7D9CC9
+  FontName Segoe UI
+}
+state "Активный запрос" as Active {
+  state "Создан" as Created
+  state "В работе" as Working
+  state "Готов к передаче" as Ready
+}
+state "Не найдено" as NotFound
+state "Отменён" as Cancelled
+state "Передан" as Passed
+[*] --> Created : Запрос принят системой
+Created --> Working : Склад принял запрос
+Working --> Ready : Нужный вариант подобран [нет ожидающей отмены]
+Ready --> Working : Ошибка готовности / причина [нет ожидающей отмены]
+Working --> Working : Продавец запросил отмену / флаг = true
+Ready --> Ready : Продавец запросил отмену / флаг = true
+Created --> Cancelled : Продавец отменил / обязательная причина
+Working --> NotFound : Поиск завершён без результата [нет ожидающей отмены]
+Working --> Cancelled : Исполнитель подтвердил отмену [положение вещи урегулировано]
+Ready --> Cancelled : Исполнитель подтвердил отмену [положение вещи урегулировано]
+Ready --> Passed : Склад подтвердил фактическую передачу на терминале
+Working --> Passed : Спорная отмена [ожидает отмена; фактическая передача подтверждена складом]
+NotFound --> [*]
+Cancelled --> [*]
+Passed --> [*]
+note right of Active
+Запрошена отмена — признак, не отдельный статус.
+До подтверждения исполнителем запрос активен.
+С 5 минут — визуальная пометка, не переход.
+Передачи работы не меняют статус или время создания.
+Неизвестный ответ — состояние связи, не новый статус запроса.
+end note
+note bottom of Cancelled
+При споре руководитель помогает сверить факты.
+Итог фиксирует складской исполнитель.
+Если вещь уже передана, фиксируется Передан, не Отменён.
+Финальные исходы не переписываются.
+end note
+@enduml

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>StoreAssist — проверка макета</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#f3f2ec;color:#24342c;font:14px/1.6 "Segoe UI",Arial,sans-serif}main{max-width:1480px;margin:auto;padding:28px}h1{font-size:26px;letter-spacing:-.6px;margin:0 0 7px}p{margin:0 0 18px;color:#586b51}.controls{display:flex;align-items:end;flex-wrap:wrap;gap:16px;padding:17px;border:1px solid #d7e0cf;background:#fffefa;border-radius:12px;margin:22px 0 15px}label{font-size:12px;font-weight:600;display:grid;gap:6px}select,a{min-height:44px}select{font:inherit;padding:9px 32px 9px 12px;border:1px solid #b4c2a8;border-radius:8px;background:#fffefa;color:#24342c}a{display:inline-flex;align-items:center;color:#31582f;text-underline-offset:4px}a:focus-visible,select:focus-visible{outline:3px solid #426c3a;outline-offset:3px}.frame-stage{overflow:auto;max-width:100%;padding:18px;background:#e5e9dc;border:1px solid #c9d5bd;border-radius:12px}iframe{display:block;width:390px;height:844px;border:0;background:#f3f2ec;box-shadow:0 4px 16px #263b3112}ul{padding-left:20px;color:#586b51}small{display:block;color:#62715a;margin-top:13px}@media(max-width:580px){main{padding:20px 14px}.frame-stage{padding:8px}.controls{gap:12px}select{font-size:16px}}
+  </style>
+</head>
+<body><main>
+  <h1>Проверка макета StoreAssist</h1>
+  <p>Проверочная очередь из 20 запросов с длинными названиями. Изменения в этом режиме не записываются в обычную демонстрацию.</p>
+  <div class="controls">
+    <label for="size">Область отображения<select id="size"><option value="320,740">320 × 740</option><option value="390,844" selected>390 × 844</option><option value="430,932">430 × 932</option><option value="768,1024">768 × 1024</option><option value="1366,900">1366 × 900</option><option value="844,390">844 × 390 · горизонтально</option><option value="932,430">932 × 430 · горизонтально</option></select></label>
+    <label for="role">Рабочее место<select id="role"><option value="warehouse">Склад</option><option value="seller">Продавец</option><option value="both">Оба</option></select></label>
+    <a id="standalone" href="../dist/?demo=stress&amp;view=warehouse" target="_blank" rel="noopener">Открыть отдельно ↗</a>
+    <a href="../dist/">Обычный макет</a>
+  </div>
+  <p id="caption" aria-live="polite">Область макета: 390 × 844 CSS px. Склад.</p>
+  <div class="frame-stage"><iframe id="preview" title="Проверочный макет StoreAssist: склад" src="../dist/?demo=stress&amp;view=warehouse"></iframe></div>
+  <small>Размер области меняется без масштабирования содержимого. Широкую область можно прокручивать внутри рамки. Это средство ручной проверки, а не отметка об успешном прохождении.</small>
+  <ul><li>Для просмотра очереди и карточки рядом выберите «1366 × 900», рабочее место «Склад» и откройте запрос. В узком окне карточка открывается отдельно.</li><li>У продавца откройте обслуживания с длинными названиями, включая название без пробелов: текст должен переноситься без горизонтальной полосы прокрутки. Проверьте сводку ожидания, готовности и передачи.</li><li>Прокрутите очередь терминала: над поиском и по бокам закреплённой панели не должны быть видны карточки; у вкладок не должно быть отдельной горизонтальной полосы прокрутки.</li><li>Проверьте поиск по «R-001», «ST-0418» и имени продавца, затем смените вкладку и очистите поиск. При прокрутке поиск и вкладки должны оставаться доступны.</li><li>Включите «5+ минут», затем поиск и оба порядка списка. В завершённых фильтр ожидания должен быть недоступен. В узком окне проверьте перенос настроек и доступность кнопок.</li><li>На широком экране откройте карточку, уведите её строку за границы видимой области и нажмите «Показать в очереди». Повторите с поиском, который исключает выбранную строку.</li><li>Примите запрос, отметьте готовность и передачу: подтверждение появляется возле кнопки без сброса прокрутки. Проверьте крупный адрес хранения.</li><li>Откройте запрос из середины очереди и вернитесь: выбранная вкладка и положение списка должны сохраниться.</li><li>У продавца проверьте выбор варианта, место передачи и доступность нижней кнопки.</li><li>Проверьте компактные превью, читаемость названий, статуса и времени. Выбранная строка, ожидание от пяти минут и запрошенная отмена должны различаться. В сводке с четырьмя исходами проверьте выравнивание двух рядов.</li><li>Пройдите «Не найдено» с пустым комментарием, отмену до и после принятия. Кнопка «Разрешить отмену» должна открывать отдельный экран: поля прокручиваются, кнопка сохранения остаётся в нижней панели. Итог должен совпадать на обоих рабочих местах.</li><li>Предложите передачу поиска и обслуживания, смените участника в блоке демонстрации. Проверьте принятие, отказ и отзыв; до принятия ответственный не меняется.</li><li>В «Других действиях» откройте ненахождение или передачу, введите комментарий и вернитесь к карточке. При повторном открытии текст должен остаться. Проверьте возврат к позиции карточки, локальную ошибку и актуального ответственного.</li><li>Экранную клавиатуру проверяйте на телефоне через «Открыть отдельно»: рамка не воспроизводит поведение реального устройства.</li><li>После «Не найдено» выберите альтернативу. Проверьте согласие покупателя, затем неизвестное наличие с отдельным подтверждением в «Условиях демонстрации».</li><li>Верните готовность в работу с причиной. Сообщите расхождение, выберите старшего склада, примите и завершите проверку. Адрес источника и наблюдение должны различаться.</li><li>Выберите руководителя смены: проверьте обзор, ожидание и передачу коллеге без кнопок выдачи.</li><li>Включите потерю ответа до / после сохранения. Проверьте баннер, сверку, явный повтор и недоступность обычной отправки в узком и горизонтальном окне.</li></ul>
+</main><script>
+  const size=document.getElementById('size'),role=document.getElementById('role'),frame=document.getElementById('preview');
+  function update(){
+    const [width,height]=size.value.split(',').map(Number);
+    frame.style.width=width+'px';frame.style.height=height+'px';
+    const label=role.options[role.selectedIndex].text;
+    const url='../dist/?demo=stress&view='+encodeURIComponent(role.value);
+    if(frame.getAttribute('src')!==url)frame.setAttribute('src',url);
+    frame.title='Проверочный макет StoreAssist: '+label.toLowerCase();
+    document.getElementById('standalone').href=url;
+    document.getElementById('caption').textContent=`Область макета: ${width} × ${height} CSS px. ${label}.`;
+  }
+  size.addEventListener('change',update);role.addEventListener('change',update);
+</script></body></html>
