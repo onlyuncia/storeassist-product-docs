@@ -27,7 +27,7 @@
 | Раздел | Материалы |
 | --- | --- |
 | Процесс и участники | [AS-IS / TO-BE](docs/01-PROCESS-AS-IS-TO-BE.md) · [Роли и границы](docs/03-STAKEHOLDERS-AND-SCOPE.md) · [Диаграммы](docs/06-DIAGRAMS.md) |
-| Поведение модуля | [Требования и правила](docs/02-REQUIREMENTS.md) · [Проектные решения](docs/05-DECISIONS-AND-QUESTIONS.md) · [Сценарии](docs/07-USE-CASES.md) · [Карта экранов](docs/08-SCREEN-MAP.md) |
+| Поведение модуля | [Требования и правила](docs/02-REQUIREMENTS.md) · [Проектные решения](docs/05-DECISIONS-AND-QUESTIONS.md) · [Сценарии](docs/07-USE-CASES.md) |
 | Проверка | [Метрики и критерии приёмки](docs/04-METRICS-AND-ACCEPTANCE.md) · [Прототип](docs/09-PROTOTYPE.md) |
 
 Проектный процесс описан в документации и частично проверен в локальном прототипе. [Текущий статус и оставшиеся проверки](prototype/QA.md) ведутся отдельно. Для оценки бизнес-эффекта подготовлен план пилота; измеренных результатов пока нет.
